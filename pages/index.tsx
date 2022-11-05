@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import groq from 'groq'
 import sanity from './lib/sanity'
-import Link from './components/LinkModule'
+import Link from '../components/LinkModule'
 
 
 const Index = (props: any) => {

@@ -14,11 +14,11 @@ const Index = (props: any) => {
       </Head>
 
       <div className='flex flex-col h-screen justify-between text-jet'>
-        <header className='pt-3 my-5 mb-10 text-center'>
+        <header className='pt-6 pb-4 text-center'>
           <h1 className='text-3xl uppercase font-extrabold'>links.nosaka.me</h1>
           <p className='text-xl uppercase font-bold tracking-widest'>A Link Repository</p>
         </header>
-        <main className=''>
+        <main className=' grow'>
           <ul>
             {links.map((link: {url: string, name: string, blurb: any, _id: any}) => (
               <li key={link._id}>
@@ -28,8 +28,9 @@ const Index = (props: any) => {
           </ul>
         </main>
 
-        <footer className='my-10 mt-48'>
-          <p className='text-center tracking-wider font-light uppercase text-sm'>Made with Next.js and Tailwind CSS, hosted on Vercel</p>
+        <footer className='h-16'>
+          <p className='text-center tracking-wider font-light uppercase text-sm'>Made with Next.js and Tailwind CSS</p>
+          <p className='text-center tracking-wider font-light uppercase text-sm'>Hosted on Vercel</p>
         </footer>
       </div>
     </>

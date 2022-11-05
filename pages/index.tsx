@@ -1,42 +1,38 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import groq from 'groq'
 import sanity from './lib/sanity'
+import Link from './components/LinkModule'
 
 
 const Index = (props: any) => {
   const links = props.links
   return (
-    <div>
+    <>
       <Head>
         <title>links.nosaka.me</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <ul>
-        {links.map((link: {url: string, name: string, blurb: any, _id: any}) => (
-          <li key={link._id}>
-            <p>{link.name}</p>
-            <p>{link.url}</p>
-          </li>
-        ))}
+      <div className='flex flex-col h-screen justify-between text-jet'>
+        <header className='pt-3 my-5 mb-10 text-center'>
+          <h1 className='text-3xl uppercase font-extrabold'>links.nosaka.me</h1>
+          <p className='text-xl uppercase font-bold tracking-widest'>A Link Repository</p>
+        </header>
+        <main className=''>
+          <ul>
+            {links.map((link: {url: string, name: string, blurb: any, _id: any}) => (
+              <li key={link._id}>
+                <Link name={link.name} url={link.url} blurb={link.blurb}/>
+              </li>
+            ))}
+          </ul>
+        </main>
 
-        </ul>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+        <footer className='my-10 mt-48'>
+          <p className='text-center tracking-wider font-light uppercase text-sm'>Made with Next.js and Tailwind CSS, hosted on Vercel</p>
+        </footer>
+      </div>
+    </>
   )
 }
 

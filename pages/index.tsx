@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import groq from 'groq'
-import sanity from './lib/sanity'
+import sanity from '../lib/sanity'
 import Link from '../components/LinkModule'
 
 

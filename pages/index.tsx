@@ -42,7 +42,6 @@ const query = process.env.NODE_ENV === 'development' ?
 
 export async function getStaticProps() {
   const links = await sanity.fetch(query)
-  console.log(links)
   return {
     props: {
       links: links
